@@ -23,7 +23,7 @@ class Person implements IPerson{
 }
 
 abstract class House{
-    tenants: Person[]=[];
+    tenants:Person[] =[];
   door: boolean;
     key: Key;
     comeIn(person: Person) {
@@ -43,7 +43,7 @@ class MyHouse extends House{
     this.key = key;
     }
   openDoor(key: Key) {
-        if (key === this.key) {
+        if (key.getSignature() === this.key.getSignature()) {
             console.log("Opened door");
             this.door = true;
     }
